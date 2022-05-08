@@ -1,7 +1,7 @@
 //assets import
 @import "../assets";
 
-.top-message-wrapper{
+.top-message-wrapper {
   background: $navy;
   color: white;
   padding: 10px 30px;
@@ -11,20 +11,21 @@
   column-gap: 50px;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background: lighten($navy, 10%);
   }
 
   $title-width: 200px;
-  .title{
+  .title {
     font-size: 1.3em;
     width: $title-width;
     background: white;
     color: $navy;
     border-radius: 10px;
+    white-space: nowrap;
   }
 
-  .inner{
+  .inner {
     display: inline-flex;
     align-items: center;
     overflow: hidden;
@@ -33,47 +34,53 @@
     position: relative;
   }
 
-  .message{
-    text-align: right;
+  .message {
+    min-width: 100%;
     font-size: 2rem;
-    animation: moveToLeft 20s linear infinite;
+    animation: moveToLeft 2s infinite;
     text-decoration: underline 2px $vermilion;
     text-underline-offset: 10px;
   }
+}
 
-  @keyframes moveToLeft{
-    from{transform: translateX(100%);}
-    to{transform: translateX(-100%);}
+@keyframes moveToLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }
 
-.seat-table-container{
+.seat-table-container {
   width: 1000px;
   display: flex;
   justify-content: center;
   margin: 50px auto;
 
-  .column{
+  .column {
     width: 200px;
     cursor: pointer;
-    &:not(:last-child){
+    &:not(:last-child) {
       margin-right: 50px;
     }
 
-    li{
+    li {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 95px;
       // font-weight: bold;
       font-size: 4rem;
-      &:not(:last-child){margin-bottom: 30px;}
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
       background: $emerald-green;
-      &:not(.active):hover{
+      &:not(.active):hover {
         background: darken($emerald-green, 30%);
       }
 
-      &.active{
+      &.active {
         background: $vermilion;
         color: white;
         cursor: not-allowed;
@@ -83,30 +90,32 @@
     }
   }
 
-  &.unactive li{
+  &.unactive li {
     background: $gray;
 
-    &:not(.active):hover{background: $gray};
+    &:not(.active):hover {
+      background: $gray;
+    }
   }
 }
 
-.cancel-manipulation-btn{
+.cancel-manipulation-btn {
   background: $vermilion;
   color: white;
   padding: 10px;
 
-  &.unactive{
+  &.unactive {
     display: none;
   }
 }
 
-.cancel-arrow{
+.cancel-arrow {
   // font-size: 3rem;
 }
 
-.btn-wrapper{
+.btn-wrapper {
   position: relative;
-  .cancel-manipulation-btn{
+  .cancel-manipulation-btn {
     position: absolute;
     top: 10px;
     left: 50%;

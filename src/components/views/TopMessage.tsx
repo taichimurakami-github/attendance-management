@@ -1,9 +1,11 @@
+import "../styles/modules/Top.scss";
+
 interface TopMessageView {
-  msg: string
-  activateNewsModal: () => void,
+  msg: string;
+  activateNewsModal: () => void;
 }
 
-export const TopMessage: React.VFC<TopMessageView> = (props) => {
+export const TopMessage = (props: TopMessageView) => {
   return (
     <div onClick={props.activateNewsModal} className="top-message-wrapper">
       <h2 className="title">お知らせ</h2>
@@ -11,5 +13,5 @@ export const TopMessage: React.VFC<TopMessageView> = (props) => {
         <p className="message">{props.msg}</p>
       </div>
     </div>
-  )
-}
+  );
+};
