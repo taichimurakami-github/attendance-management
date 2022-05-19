@@ -4,7 +4,7 @@
   "version": "0.9.12",
   "author": "Taichi Murakami",
   "private": true,
-  "main": "public/electron/main.js",
+  "main": "build/electron/main.js",
   "homepage": "./",
   "scripts": {
     "react-start": "cross-env BROWSER=none node scripts/start.js",
